@@ -1,0 +1,148 @@
+{
+  "name": "Scene 7 — CTA",
+  "version": "1.0.0",
+  "output": { "type": "video", "width": 1920, "height": 1080, "fps": 30, "duration": 5, "backgroundColor": "#FFFFFF" },
+  "inputs": [],
+  "composition": {
+    "scenes": [
+      {
+        "id": "s7-cta",
+        "startFrame": 1200,
+        "endFrame": 1350,
+        "backgroundColor": "#FFFFFF",
+        "layers": [
+          {
+            "id": "s7-logo",
+            "type": "text",
+            "position": { "x": 960, "y": 380 },
+            "size": { "width": 600, "height": 80 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "props": {
+              "text": "",
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 48,
+              "fontWeight": "700",
+              "color": "#111928",
+              "textAlign": "center",
+              "verticalAlign": "middle",
+              "letterSpacing": -1,
+              "spans": [
+                { "text": "Flow", "color": "#111928", "fontWeight": "700" },
+                { "text": "Hunt", "color": "#0084FF", "fontWeight": "700" }
+              ]
+            },
+            "animations": [
+              { "type": "entrance", "effect": "fadeInUp", "delay": 0, "duration": 20, "easing": "easeOutCubic" }
+            ]
+          },
+          {
+            "id": "s7-divider",
+            "type": "shape",
+            "position": { "x": 960, "y": 480 },
+            "size": { "width": 200, "height": 1 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "props": { "shape": "rectangle", "fill": "#E5E7EB" },
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn", "delay": 20, "duration": 15, "easing": "easeOutCubic" },
+              { "type": "keyframe", "duration": 15, "delay": 20, "keyframes": [
+                { "frame": 0,  "properties": { "scaleX": 0 } },
+                { "frame": 15, "properties": { "scaleX": 1 }, "easing": "easeOutCubic" }
+              ]}
+            ]
+          },
+          {
+            "id": "s7-title",
+            "type": "text",
+            "position": { "x": 960, "y": 560 },
+            "size": { "width": 1400, "height": 60 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "props": {
+              "text": "How to Use Claude Code with Playwright MCP",
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 44,
+              "fontWeight": "700",
+              "color": "#111928",
+              "textAlign": "center",
+              "verticalAlign": "middle"
+            },
+            "animations": [
+              { "type": "entrance", "effect": "fadeInUp", "delay": 35, "duration": 20, "easing": "easeOutCubic" }
+            ]
+          },
+          {
+            "id": "s7-sub",
+            "type": "text",
+            "position": { "x": 960, "y": 620 },
+            "size": { "width": 1400, "height": 40 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "props": {
+              "text": "A complete setup guide",
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 24,
+              "fontWeight": "400",
+              "color": "#6B7280",
+              "textAlign": "center",
+              "verticalAlign": "middle"
+            },
+            "animations": [
+              { "type": "entrance", "effect": "fadeInUp", "delay": 35, "duration": 20, "easing": "easeOutCubic" }
+            ]
+          },
+          {
+            "id": "s7-cta-button",
+            "type": "shape",
+            "position": { "x": 960, "y": 720 },
+            "size": { "width": 320, "height": 64 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "props": { "shape": "rectangle", "fill": "#0084FF", "borderRadius": 32 },
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn", "delay": 60, "duration": 20, "easing": "easeOutCubic" },
+              { "type": "keyframe", "duration": 20, "delay": 60, "keyframes": [
+                { "frame": 0,  "properties": { "scaleX": 0.9, "scaleY": 0.9 } },
+                { "frame": 20, "properties": { "scaleX": 1.0, "scaleY": 1.0 }, "easing": "easeOutCubic" }
+              ]}
+            ]
+          },
+          {
+            "id": "s7-cta-label",
+            "type": "text",
+            "position": { "x": 960, "y": 720 },
+            "size": { "width": 320, "height": 32 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "props": {
+              "text": "Read the guide →",
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 22,
+              "fontWeight": "600",
+              "color": "#FFFFFF",
+              "textAlign": "center",
+              "verticalAlign": "middle"
+            },
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn", "delay": 60, "duration": 20, "easing": "easeOutCubic" }
+            ]
+          },
+          {
+            "id": "s7-url",
+            "type": "text",
+            "position": { "x": 960, "y": 820 },
+            "size": { "width": 1400, "height": 32 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "props": {
+              "text": "flowhunt.io/blog",
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 20,
+              "fontWeight": "500",
+              "color": "#6B7280",
+              "textAlign": "center",
+              "verticalAlign": "middle"
+            },
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn", "delay": 120, "duration": 30, "easing": "easeOutCubic" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

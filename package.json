@@ -1,0 +1,13 @@
+{
+  "name": "mcp-in-action",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "render": "node render.mjs"
+  },
+  "dependencies": {
+    "@rendervid/core": "link:../rendervid/packages/core",
+    "@rendervid/renderer-node": "link:../rendervid/packages/renderer-node"
+  }
+}

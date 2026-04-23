@@ -1,0 +1,48 @@
+{
+  "name": "Scene 1 — Hook",
+  "version": "1.0.0",
+  "output": { "type": "video", "width": 1920, "height": 1080, "fps": 30, "duration": 3, "backgroundColor": "#FFFFFF" },
+  "inputs": [],
+  "composition": {
+    "scenes": [
+      {
+        "id": "s1-hook",
+        "startFrame": 0,
+        "endFrame": 90,
+        "backgroundColor": "#FFFFFF",
+        "layers": [
+          {
+            "id": "s1-headline",
+            "type": "text",
+            "position": { "x": 960, "y": 540 },
+            "size": { "width": 1400, "height": 220 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "props": {
+              "text": "Your terminal can drive the browser.",
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 84,
+              "fontWeight": "700",
+              "color": "#111928",
+              "textAlign": "center",
+              "verticalAlign": "middle",
+              "lineHeight": 1.15,
+              "spans": [
+                { "text": "Your terminal can ", "color": "#111928", "fontWeight": "700" },
+                { "text": "drive", "color": "#0084FF", "fontWeight": "700" },
+                { "text": " the browser.", "color": "#111928", "fontWeight": "700" }
+              ]
+            },
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn",  "delay": 0,  "duration": 20, "easing": "easeOutCubic" },
+              { "type": "keyframe", "duration": 20, "delay": 0, "keyframes": [
+                { "frame": 0,  "properties": { "scaleX": 0.96, "scaleY": 0.96 } },
+                { "frame": 20, "properties": { "scaleX": 1.0,  "scaleY": 1.0  }, "easing": "easeOutCubic" }
+              ]},
+              { "type": "exit", "effect": "fadeOut", "delay": 75, "duration": 15, "easing": "easeInCubic" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,230 @@
+{
+  "name": "Scene 2 — Problem",
+  "version": "1.0.0",
+  "output": { "type": "video", "width": 1920, "height": 1080, "fps": 30, "duration": 6, "backgroundColor": "#FFFFFF" },
+  "inputs": [],
+  "composition": {
+    "scenes": [
+      {
+        "id": "s2-problem",
+        "startFrame": 90,
+        "endFrame": 270,
+        "backgroundColor": "#FFFFFF",
+        "layers": [
+          {
+            "id": "s2-divider",
+            "type": "shape",
+            "position": { "x": 960, "y": 540 },
+            "size": { "width": 1, "height": 400 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "props": { "shape": "rectangle", "fill": "#E5E7EB" }
+          },
+
+          {
+            "id": "s2-left-magnifier-ring",
+            "type": "shape",
+            "position": { "x": 470, "y": 430 },
+            "size": { "width": 72, "height": 72 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "props": { "shape": "ellipse", "fill": "rgba(0,0,0,0)", "stroke": "#6B7280", "strokeWidth": 4 },
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn", "delay": 0, "duration": 20, "easing": "easeOutCubic" },
+              { "type": "keyframe", "duration": 20, "delay": 0, "keyframes": [
+                { "frame": 0,  "properties": { "scaleX": 0.95, "scaleY": 0.95 } },
+                { "frame": 20, "properties": { "scaleX": 1.0,  "scaleY": 1.0  }, "easing": "easeOutCubic" }
+              ]},
+              { "type": "exit", "effect": "fadeOut", "delay": 160, "duration": 20, "easing": "easeInCubic" }
+            ]
+          },
+          {
+            "id": "s2-left-magnifier-handle",
+            "type": "shape",
+            "position": { "x": 518, "y": 478 },
+            "size": { "width": 5, "height": 40 },
+            "anchor": { "x": 0.5, "y": 0 },
+            "rotation": -45,
+            "props": { "shape": "rectangle", "fill": "#6B7280", "borderRadius": 2 },
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn", "delay": 0, "duration": 20, "easing": "easeOutCubic" },
+              { "type": "exit",     "effect": "fadeOut", "delay": 160, "duration": 20, "easing": "easeInCubic" }
+            ]
+          },
+          {
+            "id": "s2-left-label",
+            "type": "text",
+            "position": { "x": 480, "y": 560 },
+            "size": { "width": 600, "height": 40 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "props": {
+              "text": "Vision models",
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 28,
+              "fontWeight": "600",
+              "color": "#111928",
+              "textAlign": "center",
+              "verticalAlign": "middle"
+            },
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn", "delay": 0, "duration": 20, "easing": "easeOutCubic" },
+              { "type": "exit",     "effect": "fadeOut", "delay": 160, "duration": 20, "easing": "easeInCubic" }
+            ]
+          },
+          {
+            "id": "s2-left-sublabel",
+            "type": "text",
+            "position": { "x": 480, "y": 598 },
+            "size": { "width": 600, "height": 32 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "props": {
+              "text": "slow · unreliable",
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 20,
+              "fontWeight": "400",
+              "color": "#6B7280",
+              "textAlign": "center",
+              "verticalAlign": "middle"
+            },
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn", "delay": 0, "duration": 20, "easing": "easeOutCubic" },
+              { "type": "exit",     "effect": "fadeOut", "delay": 160, "duration": 20, "easing": "easeInCubic" }
+            ]
+          },
+          {
+            "id": "s2-left-x-stroke1",
+            "type": "shape",
+            "position": { "x": 480, "y": 440 },
+            "size": { "width": 8, "height": 180 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "rotation": 45,
+            "props": { "shape": "rectangle", "fill": "#EF4444", "borderRadius": 4 },
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn", "delay": 90,  "duration": 20, "easing": "easeOutCubic" },
+              { "type": "keyframe", "duration": 20, "delay": 90, "keyframes": [
+                { "frame": 0,  "properties": { "scaleX": 0.7, "scaleY": 0.7 } },
+                { "frame": 20, "properties": { "scaleX": 1.0, "scaleY": 1.0 }, "easing": "easeOutBack" }
+              ]},
+              { "type": "exit", "effect": "fadeOut", "delay": 160, "duration": 20, "easing": "easeInCubic" }
+            ]
+          },
+          {
+            "id": "s2-left-x-stroke2",
+            "type": "shape",
+            "position": { "x": 480, "y": 440 },
+            "size": { "width": 8, "height": 180 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "rotation": -45,
+            "props": { "shape": "rectangle", "fill": "#EF4444", "borderRadius": 4 },
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn", "delay": 90,  "duration": 20, "easing": "easeOutCubic" },
+              { "type": "keyframe", "duration": 20, "delay": 90, "keyframes": [
+                { "frame": 0,  "properties": { "scaleX": 0.7, "scaleY": 0.7 } },
+                { "frame": 20, "properties": { "scaleX": 1.0, "scaleY": 1.0 }, "easing": "easeOutBack" }
+              ]},
+              { "type": "exit", "effect": "fadeOut", "delay": 160, "duration": 20, "easing": "easeInCubic" }
+            ]
+          },
+
+          {
+            "id": "s2-right-selector",
+            "type": "text",
+            "position": { "x": 1440, "y": 440 },
+            "size": { "width": 760, "height": 120 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "props": {
+              "text": "#root > div.app-shell > main >\ndiv:nth-child(3) > form > input",
+              "fontFamily": "JetBrains Mono, monospace",
+              "fontSize": 18,
+              "fontWeight": "400",
+              "color": "#374151",
+              "textAlign": "center",
+              "verticalAlign": "middle",
+              "lineHeight": 1.5
+            },
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn", "delay": 0, "duration": 20, "easing": "easeOutCubic" },
+              { "type": "keyframe", "duration": 20, "delay": 0, "keyframes": [
+                { "frame": 0,  "properties": { "scaleX": 0.95, "scaleY": 0.95 } },
+                { "frame": 20, "properties": { "scaleX": 1.0,  "scaleY": 1.0  }, "easing": "easeOutCubic" }
+              ]},
+              { "type": "exit", "effect": "fadeOut", "delay": 160, "duration": 20, "easing": "easeInCubic" }
+            ]
+          },
+          {
+            "id": "s2-right-label",
+            "type": "text",
+            "position": { "x": 1440, "y": 560 },
+            "size": { "width": 600, "height": 40 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "props": {
+              "text": "CSS selectors",
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 28,
+              "fontWeight": "600",
+              "color": "#111928",
+              "textAlign": "center",
+              "verticalAlign": "middle"
+            },
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn", "delay": 0, "duration": 20, "easing": "easeOutCubic" },
+              { "type": "exit",     "effect": "fadeOut", "delay": 160, "duration": 20, "easing": "easeInCubic" }
+            ]
+          },
+          {
+            "id": "s2-right-sublabel",
+            "type": "text",
+            "position": { "x": 1440, "y": 598 },
+            "size": { "width": 600, "height": 32 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "props": {
+              "text": "break on redesign",
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 20,
+              "fontWeight": "400",
+              "color": "#6B7280",
+              "textAlign": "center",
+              "verticalAlign": "middle"
+            },
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn", "delay": 0, "duration": 20, "easing": "easeOutCubic" },
+              { "type": "exit",     "effect": "fadeOut", "delay": 160, "duration": 20, "easing": "easeInCubic" }
+            ]
+          },
+          {
+            "id": "s2-right-x-stroke1",
+            "type": "shape",
+            "position": { "x": 1440, "y": 440 },
+            "size": { "width": 8, "height": 180 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "rotation": 45,
+            "props": { "shape": "rectangle", "fill": "#EF4444", "borderRadius": 4 },
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn", "delay": 90,  "duration": 20, "easing": "easeOutCubic" },
+              { "type": "keyframe", "duration": 20, "delay": 90, "keyframes": [
+                { "frame": 0,  "properties": { "scaleX": 0.7, "scaleY": 0.7 } },
+                { "frame": 20, "properties": { "scaleX": 1.0, "scaleY": 1.0 }, "easing": "easeOutBack" }
+              ]},
+              { "type": "exit", "effect": "fadeOut", "delay": 160, "duration": 20, "easing": "easeInCubic" }
+            ]
+          },
+          {
+            "id": "s2-right-x-stroke2",
+            "type": "shape",
+            "position": { "x": 1440, "y": 440 },
+            "size": { "width": 8, "height": 180 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "rotation": -45,
+            "props": { "shape": "rectangle", "fill": "#EF4444", "borderRadius": 4 },
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn", "delay": 90,  "duration": 20, "easing": "easeOutCubic" },
+              { "type": "keyframe", "duration": 20, "delay": 90, "keyframes": [
+                { "frame": 0,  "properties": { "scaleX": 0.7, "scaleY": 0.7 } },
+                { "frame": 20, "properties": { "scaleX": 1.0, "scaleY": 1.0 }, "easing": "easeOutBack" }
+              ]},
+              { "type": "exit", "effect": "fadeOut", "delay": 160, "duration": 20, "easing": "easeInCubic" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

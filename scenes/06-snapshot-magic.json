@@ -1,0 +1,417 @@
+{
+  "name": "Scene 6 — Snapshot magic",
+  "version": "1.0.0",
+  "output": { "type": "video", "width": 1920, "height": 1080, "fps": 30, "duration": 10, "backgroundColor": "#FFFFFF" },
+  "inputs": [],
+  "composition": {
+    "scenes": [
+      {
+        "id": "s6-snapshot",
+        "startFrame": 900,
+        "endFrame": 1200,
+        "backgroundColor": "#FFFFFF",
+        "layers": [
+          {
+            "id": "s6-left-label",
+            "type": "text",
+            "position": { "x": 480, "y": 220 },
+            "size": { "width": 720, "height": 24 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "props": {
+              "text": "WHAT CLAUDE READS",
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 14,
+              "fontWeight": "700",
+              "color": "#6B7280",
+              "textAlign": "center",
+              "verticalAlign": "middle",
+              "letterSpacing": 1.5
+            },
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn", "delay": 0, "duration": 20, "easing": "easeOutCubic" },
+              { "type": "exit",     "effect": "fadeOut", "delay": 260, "duration": 40, "easing": "easeInCubic" }
+            ]
+          },
+          {
+            "id": "s6-right-label",
+            "type": "text",
+            "position": { "x": 1440, "y": 220 },
+            "size": { "width": 720, "height": 24 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "props": {
+              "text": "WHAT YOU SEE",
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 14,
+              "fontWeight": "700",
+              "color": "#6B7280",
+              "textAlign": "center",
+              "verticalAlign": "middle",
+              "letterSpacing": 1.5
+            },
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn", "delay": 0, "duration": 20, "easing": "easeOutCubic" },
+              { "type": "exit",     "effect": "fadeOut", "delay": 260, "duration": 40, "easing": "easeInCubic" }
+            ]
+          },
+
+          {
+            "id": "s6-left-pane",
+            "type": "shape",
+            "position": { "x": 480, "y": 540 },
+            "size": { "width": 720, "height": 520 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "props": { "shape": "rectangle", "fill": "#1F2937", "borderRadius": 12 },
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn", "delay": 0, "duration": 20, "easing": "easeOutCubic" },
+              { "type": "exit",     "effect": "fadeOut", "delay": 260, "duration": 40, "easing": "easeInCubic" }
+            ]
+          },
+
+          {
+            "id": "s6-right-pane",
+            "type": "shape",
+            "position": { "x": 1440, "y": 540 },
+            "size": { "width": 720, "height": 520 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "props": { "shape": "rectangle", "fill": "#FFFFFF", "stroke": "#E5E7EB", "strokeWidth": 1.5, "borderRadius": 12 },
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn", "delay": 0, "duration": 20, "easing": "easeOutCubic" },
+              { "type": "exit",     "effect": "fadeOut", "delay": 260, "duration": 40, "easing": "easeInCubic" }
+            ]
+          },
+
+          {
+            "id": "s6-right-title",
+            "type": "text",
+            "position": { "x": 1440, "y": 360 },
+            "size": { "width": 720, "height": 90 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "props": {
+              "text": "todos",
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 72,
+              "fontWeight": "200",
+              "color": "#FDE2E2",
+              "textAlign": "center",
+              "verticalAlign": "middle"
+            },
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn", "delay": 20, "duration": 20, "easing": "easeOutCubic" },
+              { "type": "emphasis", "effect": "pulse",  "delay": 40, "duration": 30 },
+              { "type": "exit",     "effect": "fadeOut", "delay": 260, "duration": 40, "easing": "easeInCubic" }
+            ]
+          },
+          {
+            "id": "s6-right-input",
+            "type": "shape",
+            "position": { "x": 1440, "y": 460 },
+            "size": { "width": 600, "height": 44 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "props": { "shape": "rectangle", "fill": "#FFFFFF", "stroke": "#EDEDED", "strokeWidth": 1, "borderRadius": 4 },
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn", "delay": 20, "duration": 20, "easing": "easeOutCubic" },
+              { "type": "exit",     "effect": "fadeOut", "delay": 260, "duration": 40, "easing": "easeInCubic" }
+            ]
+          },
+          {
+            "id": "s6-right-input-placeholder",
+            "type": "text",
+            "position": { "x": 1165, "y": 460 },
+            "size": { "width": 600, "height": 28 },
+            "anchor": { "x": 0, "y": 0.5 },
+            "props": {
+              "text": "What needs to be done?",
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 18,
+              "fontStyle": "italic",
+              "color": "#BFBFBF",
+              "textAlign": "left",
+              "verticalAlign": "middle"
+            },
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn", "delay": 20, "duration": 20, "easing": "easeOutCubic" },
+              { "type": "exit",     "effect": "fadeOut", "delay": 260, "duration": 40, "easing": "easeInCubic" }
+            ]
+          },
+          {
+            "id": "s6-right-input-focus-ring",
+            "type": "shape",
+            "position": { "x": 1440, "y": 460 },
+            "size": { "width": 608, "height": 52 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "props": { "shape": "rectangle", "fill": "rgba(0,0,0,0)", "stroke": "#0084FF", "strokeWidth": 2, "borderRadius": 6 },
+            "opacity": 0,
+            "animations": [
+              { "type": "keyframe", "duration": 45, "delay": 80, "keyframes": [
+                { "frame": 0,  "properties": { "opacity": 0 } },
+                { "frame": 15, "properties": { "opacity": 1 } },
+                { "frame": 30, "properties": { "opacity": 1 } },
+                { "frame": 45, "properties": { "opacity": 0 } }
+              ]}
+            ]
+          },
+
+          {
+            "id": "s6-right-row1-divider",
+            "type": "shape",
+            "position": { "x": 1440, "y": 520 },
+            "size": { "width": 600, "height": 1 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "props": { "shape": "rectangle", "fill": "#EDEDED" },
+            "opacity": 0,
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn", "delay": 140, "duration": 15, "easing": "easeOutCubic" },
+              { "type": "exit",     "effect": "fadeOut", "delay": 260, "duration": 40, "easing": "easeInCubic" }
+            ]
+          },
+          {
+            "id": "s6-right-row1-check",
+            "type": "shape",
+            "position": { "x": 1170, "y": 550 },
+            "size": { "width": 22, "height": 22 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "props": { "shape": "ellipse", "fill": "rgba(0,0,0,0)", "stroke": "#CCCCCC", "strokeWidth": 1.5 },
+            "opacity": 0,
+            "animations": [
+              { "type": "entrance", "effect": "fadeInUp", "delay": 140, "duration": 15, "easing": "easeOutCubic" },
+              { "type": "exit",     "effect": "fadeOut",  "delay": 260, "duration": 40, "easing": "easeInCubic" }
+            ]
+          },
+          {
+            "id": "s6-right-row1-text",
+            "type": "text",
+            "position": { "x": 1200, "y": 550 },
+            "size": { "width": 500, "height": 28 },
+            "anchor": { "x": 0, "y": 0.5 },
+            "props": {
+              "text": "Buy groceries",
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 18,
+              "fontWeight": "400",
+              "color": "#4D4D4D",
+              "textAlign": "left",
+              "verticalAlign": "middle"
+            },
+            "opacity": 0,
+            "animations": [
+              { "type": "entrance", "effect": "fadeInUp", "delay": 140, "duration": 15, "easing": "easeOutCubic" },
+              { "type": "exit",     "effect": "fadeOut",  "delay": 260, "duration": 40, "easing": "easeInCubic" }
+            ]
+          },
+
+          {
+            "id": "s6-right-row2-divider",
+            "type": "shape",
+            "position": { "x": 1440, "y": 590 },
+            "size": { "width": 600, "height": 1 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "props": { "shape": "rectangle", "fill": "#EDEDED" },
+            "opacity": 0,
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn", "delay": 153, "duration": 15, "easing": "easeOutCubic" },
+              { "type": "exit",     "effect": "fadeOut", "delay": 260, "duration": 40, "easing": "easeInCubic" }
+            ]
+          },
+          {
+            "id": "s6-right-row2-check",
+            "type": "shape",
+            "position": { "x": 1170, "y": 620 },
+            "size": { "width": 22, "height": 22 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "props": { "shape": "ellipse", "fill": "rgba(0,0,0,0)", "stroke": "#CCCCCC", "strokeWidth": 1.5 },
+            "opacity": 0,
+            "animations": [
+              { "type": "entrance", "effect": "fadeInUp", "delay": 153, "duration": 15, "easing": "easeOutCubic" },
+              { "type": "exit",     "effect": "fadeOut",  "delay": 260, "duration": 40, "easing": "easeInCubic" }
+            ]
+          },
+          {
+            "id": "s6-right-row2-text",
+            "type": "text",
+            "position": { "x": 1200, "y": 620 },
+            "size": { "width": 500, "height": 28 },
+            "anchor": { "x": 0, "y": 0.5 },
+            "props": {
+              "text": "Walk the dog",
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 18,
+              "fontWeight": "400",
+              "color": "#4D4D4D",
+              "textAlign": "left",
+              "verticalAlign": "middle"
+            },
+            "opacity": 0,
+            "animations": [
+              { "type": "entrance", "effect": "fadeInUp", "delay": 153, "duration": 15, "easing": "easeOutCubic" },
+              { "type": "exit",     "effect": "fadeOut",  "delay": 260, "duration": 40, "easing": "easeInCubic" }
+            ]
+          },
+
+          {
+            "id": "s6-right-row3-divider",
+            "type": "shape",
+            "position": { "x": 1440, "y": 660 },
+            "size": { "width": 600, "height": 1 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "props": { "shape": "rectangle", "fill": "#EDEDED" },
+            "opacity": 0,
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn", "delay": 166, "duration": 15, "easing": "easeOutCubic" },
+              { "type": "exit",     "effect": "fadeOut", "delay": 260, "duration": 40, "easing": "easeInCubic" }
+            ]
+          },
+          {
+            "id": "s6-right-row3-check",
+            "type": "shape",
+            "position": { "x": 1170, "y": 690 },
+            "size": { "width": 22, "height": 22 },
+            "anchor": { "x": 0.5, "y": 0.5 },
+            "props": { "shape": "ellipse", "fill": "rgba(0,0,0,0)", "stroke": "#CCCCCC", "strokeWidth": 1.5 },
+            "opacity": 0,
+            "animations": [
+              { "type": "entrance", "effect": "fadeInUp", "delay": 166, "duration": 15, "easing": "easeOutCubic" },
+              { "type": "exit",     "effect": "fadeOut",  "delay": 260, "duration": 40, "easing": "easeInCubic" }
+            ]
+          },
+          {
+            "id": "s6-right-row3-text",
+            "type": "text",
+            "position": { "x": 1200, "y": 690 },
+            "size": { "width": 500, "height": 28 },
+            "anchor": { "x": 0, "y": 0.5 },
+            "props": {
+              "text": "Ship the blog",
+              "fontFamily": "Inter, system-ui, sans-serif",
+              "fontSize": 18,
+              "fontWeight": "400",
+              "color": "#4D4D4D",
+              "textAlign": "left",
+              "verticalAlign": "middle"
+            },
+            "opacity": 0,
+            "animations": [
+              { "type": "entrance", "effect": "fadeInUp", "delay": 166, "duration": 15, "easing": "easeOutCubic" },
+              { "type": "exit",     "effect": "fadeOut",  "delay": 260, "duration": 40, "easing": "easeInCubic" }
+            ]
+          },
+
+          {
+            "id": "s6-left-line1",
+            "type": "text",
+            "position": { "x": 160, "y": 340 },
+            "size": { "width": 640, "height": 32 },
+            "anchor": { "x": 0, "y": 0.5 },
+            "props": {
+              "text": "- heading \"todos\" [level=1]",
+              "fontFamily": "JetBrains Mono, monospace",
+              "fontSize": 18,
+              "fontWeight": "400",
+              "color": "#E5E7EB",
+              "textAlign": "left",
+              "verticalAlign": "middle",
+              "lineHeight": 1.55
+            },
+            "opacity": 0,
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn", "delay": 40, "duration": 30, "easing": "easeOutCubic" },
+              { "type": "exit",     "effect": "fadeOut", "delay": 260, "duration": 40, "easing": "easeInCubic" }
+            ]
+          },
+          {
+            "id": "s6-left-line2",
+            "type": "text",
+            "position": { "x": 160, "y": 400 },
+            "size": { "width": 640, "height": 32 },
+            "anchor": { "x": 0, "y": 0.5 },
+            "props": {
+              "text": "",
+              "fontFamily": "JetBrains Mono, monospace",
+              "fontSize": 18,
+              "fontWeight": "400",
+              "color": "#E5E7EB",
+              "textAlign": "left",
+              "verticalAlign": "middle",
+              "lineHeight": 1.55,
+              "spans": [
+                { "text": "- textbox \"What needs to be done?\" ", "color": "#E5E7EB", "fontWeight": "400" },
+                { "text": "[ref=e5]", "color": "#FBBF24", "fontWeight": "600" }
+              ]
+            },
+            "opacity": 0,
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn", "delay": 80, "duration": 30, "easing": "easeOutCubic" },
+              { "type": "exit",     "effect": "fadeOut", "delay": 260, "duration": 40, "easing": "easeInCubic" }
+            ]
+          },
+          {
+            "id": "s6-left-line3",
+            "type": "text",
+            "position": { "x": 160, "y": 460 },
+            "size": { "width": 640, "height": 32 },
+            "anchor": { "x": 0, "y": 0.5 },
+            "props": {
+              "text": "- listitem:",
+              "fontFamily": "JetBrains Mono, monospace",
+              "fontSize": 18,
+              "fontWeight": "400",
+              "color": "#E5E7EB",
+              "textAlign": "left",
+              "verticalAlign": "middle"
+            },
+            "opacity": 0,
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn", "delay": 120, "duration": 30, "easing": "easeOutCubic" },
+              { "type": "exit",     "effect": "fadeOut", "delay": 260, "duration": 40, "easing": "easeInCubic" }
+            ]
+          },
+          {
+            "id": "s6-left-line4",
+            "type": "text",
+            "position": { "x": 200, "y": 500 },
+            "size": { "width": 640, "height": 32 },
+            "anchor": { "x": 0, "y": 0.5 },
+            "props": {
+              "text": "",
+              "fontFamily": "JetBrains Mono, monospace",
+              "fontSize": 18,
+              "fontWeight": "400",
+              "color": "#E5E7EB",
+              "textAlign": "left",
+              "verticalAlign": "middle",
+              "spans": [
+                { "text": "- checkbox \"Toggle Todo\" ", "color": "#E5E7EB", "fontWeight": "400" },
+                { "text": "[ref=e10]", "color": "#FBBF24", "fontWeight": "600" }
+              ]
+            },
+            "opacity": 0,
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn", "delay": 120, "duration": 30, "easing": "easeOutCubic" },
+              { "type": "exit",     "effect": "fadeOut", "delay": 260, "duration": 40, "easing": "easeInCubic" }
+            ]
+          },
+          {
+            "id": "s6-left-line5",
+            "type": "text",
+            "position": { "x": 200, "y": 540 },
+            "size": { "width": 640, "height": 32 },
+            "anchor": { "x": 0, "y": 0.5 },
+            "props": {
+              "text": "- text: \"Buy groceries\"",
+              "fontFamily": "JetBrains Mono, monospace",
+              "fontSize": 18,
+              "fontWeight": "400",
+              "color": "#E5E7EB",
+              "textAlign": "left",
+              "verticalAlign": "middle"
+            },
+            "opacity": 0,
+            "animations": [
+              { "type": "entrance", "effect": "fadeIn", "delay": 140, "duration": 30, "easing": "easeOutCubic" },
+              { "type": "exit",     "effect": "fadeOut", "delay": 260, "duration": 40, "easing": "easeInCubic" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
