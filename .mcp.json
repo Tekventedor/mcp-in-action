@@ -3,10 +3,6 @@
     "rendervid": {
       "command": "node",
       "args": ["/Users/hugolewisplant/rendervid/mcp/build/index.js"]
-    },
-    "playwright": {
-      "command": "npx",
-      "args": ["@playwright/mcp@latest"]
     }
   }
 }
