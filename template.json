@@ -1,0 +1,244 @@
+{
+  "name": "MCP in Action",
+  "description": "45-second explainer on Claude Code + Playwright MCP.",
+  "version": "2.0.0",
+  "output": {
+    "type": "video",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "duration": 45,
+    "backgroundColor": "#FFFFFF"
+  },
+  "customComponents": {
+    "HookScene": {
+      "type": "inline",
+      "code": "function HookScene(props){var R=React.createElement;var cl=function(x){return Math.max(0,Math.min(1,x));};var ease=function(t){return 1-Math.pow(1-t,3);};var easeIn=function(t){return t*t*t;};var easeInOut=function(t){return t<0.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;};var easeBack=function(t){var c1=1.70158;var c3=c1+1;return 1+c3*Math.pow(t-1,3)+c1*Math.pow(t-1,2);};var lerp=function(a,b,t){return a+(b-a)*t;};\n  var f=props.frame||0;\n  var inP=ease(cl(f/20));\n  var outP=easeIn(cl((f-75)/15));\n  var opacity=inP-outP;\n  var scale=0.96+0.04*inP;\n  return R('div',{style:{width:'100%',height:'100%',background:'#FFFFFF',display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'Inter,system-ui,sans-serif'}},\n    R('div',{style:{opacity:opacity,transform:'scale('+scale+')',textAlign:'center',fontSize:'84px',fontWeight:700,color:'#111928',lineHeight:1.15,letterSpacing:'-1px',maxWidth:'1400px'}},\n      'Your terminal can ',\n      R('span',{style:{background:'linear-gradient(90deg,#0084FF,#1A56DB)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text'}},'drive'),\n      ' the browser.'\n    )\n  );\n}"
+    },
+    "ProblemScene": {
+      "type": "inline",
+      "code": "function ProblemScene(props){var R=React.createElement;var cl=function(x){return Math.max(0,Math.min(1,x));};var ease=function(t){return 1-Math.pow(1-t,3);};var easeIn=function(t){return t*t*t;};var easeInOut=function(t){return t<0.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;};var easeBack=function(t){var c1=1.70158;var c3=c1+1;return 1+c3*Math.pow(t-1,3)+c1*Math.pow(t-1,2);};var lerp=function(a,b,t){return a+(b-a)*t;};\n  var f=props.frame||0;\n  var inP=ease(cl(f/20));\n  var outP=easeIn(cl((f-160)/20));\n  var baseOp=inP-outP;\n  var xP=easeBack(cl((f-90)/20));\n  var xOp=cl((f-90)/20)-outP;\n  var panelStyle={flex:1,display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',position:'relative',opacity:baseOp};\n  var iconScale=0.95+0.05*inP;\n  function cross(color){\n    return R('div',{style:{position:'absolute',width:'200px',height:'200px',opacity:xOp,transform:'scale('+xP+')'}},\n      R('svg',{width:'200',height:'200',viewBox:'0 0 200 200'},\n        R('line',{x1:'30',y1:'30',x2:'170',y2:'170',stroke:color,strokeWidth:'10',strokeLinecap:'round'}),\n        R('line',{x1:'170',y1:'30',x2:'30',y2:'170',stroke:color,strokeWidth:'10',strokeLinecap:'round'})\n      )\n    );\n  }\n  return R('div',{style:{width:'100%',height:'100%',background:'#FFFFFF',display:'flex',fontFamily:'Inter,system-ui,sans-serif',position:'relative'}},\n    R('div',{style:{position:'absolute',left:'50%',top:'31.5%',width:'1px',height:'37%',background:'#E5E7EB',opacity:baseOp}}),\n    R('div',{style:panelStyle},\n      R('div',{style:{transform:'scale('+iconScale+')',marginBottom:'32px'}},\n        R('svg',{width:'120',height:'120',viewBox:'0 0 120 120',fill:'none'},\n          R('circle',{cx:'50',cy:'50',r:'34',stroke:'#6B7280',strokeWidth:'4'}),\n          R('line',{x1:'74',y1:'74',x2:'104',y2:'104',stroke:'#6B7280',strokeWidth:'6',strokeLinecap:'round'})\n        )\n      ),\n      R('div',{style:{fontSize:'28px',fontWeight:600,color:'#111928',marginTop:'8px'}},'Vision models'),\n      R('div',{style:{fontSize:'20px',color:'#6B7280',marginTop:'6px'}},'slow · unreliable'),\n      cross('#EF4444')\n    ),\n    R('div',{style:panelStyle},\n      R('div',{style:{transform:'scale('+iconScale+')',fontFamily:'JetBrains Mono,monospace',fontSize:'20px',color:'#374151',background:'#F3F4F6',padding:'18px 24px',borderRadius:'10px',border:'1px solid #E5E7EB',maxWidth:'620px',textAlign:'center',lineHeight:1.7,marginBottom:'32px'}},\n        '#root > div.app-shell > main >',R('br'),'div:nth-child(3) > form > input'\n      ),\n      R('div',{style:{fontSize:'28px',fontWeight:600,color:'#111928',marginTop:'8px'}},'CSS selectors'),\n      R('div',{style:{fontSize:'20px',color:'#6B7280',marginTop:'6px'}},'break on redesign'),\n      cross('#EF4444')\n    )\n  );\n}"
+    },
+    "PivotScene": {
+      "type": "inline",
+      "code": "function PivotScene(props){var R=React.createElement;var cl=function(x){return Math.max(0,Math.min(1,x));};var ease=function(t){return 1-Math.pow(1-t,3);};var easeIn=function(t){return t*t*t;};var easeInOut=function(t){return t<0.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;};var easeBack=function(t){var c1=1.70158;var c3=c1+1;return 1+c3*Math.pow(t-1,3)+c1*Math.pow(t-1,2);};var lerp=function(a,b,t){return a+(b-a)*t;};\n  var f=props.frame||0;\n  var pwP=ease(cl(f/15));\n  var mcpP=ease(cl((f-10)/15));\n  var subP=ease(cl((f-60)/15));\n  var outP=easeIn(cl((f-130)/20));\n  var zoomP=cl((f-110)/20);\n  var opacity=1-outP;\n  var scale=1+0.05*zoomP;\n  return R('div',{style:{width:'100%',height:'100%',background:'#FFFFFF',display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column',fontFamily:'Inter,system-ui,sans-serif',opacity:opacity,transform:'scale('+scale+')'}},\n    R('div',{style:{display:'flex',alignItems:'baseline',gap:'24px',fontSize:'120px',fontWeight:700,letterSpacing:'-3px',lineHeight:1}},\n      R('span',{style:{color:'#111928',opacity:pwP,transform:'translateY('+(20*(1-pwP))+'px)',display:'inline-block'}},'Playwright'),\n      R('span',{style:{background:'linear-gradient(90deg,#0084FF,#1A56DB)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text',opacity:mcpP,transform:'translateY('+(20*(1-mcpP))+'px)',display:'inline-block'}},'MCP')\n    ),\n    R('div',{style:{marginTop:'32px',fontSize:'28px',color:'#6B7280',opacity:subP,transform:'translateY('+(12*(1-subP))+'px)'}},'built for AI agents like Claude Code')\n  );\n}"
+    },
+    "ArchitectureScene": {
+      "type": "inline",
+      "code": "function ArchitectureScene(props){var R=React.createElement;var cl=function(x){return Math.max(0,Math.min(1,x));};var ease=function(t){return 1-Math.pow(1-t,3);};var easeIn=function(t){return t*t*t;};var easeInOut=function(t){return t<0.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;};var easeBack=function(t){var c1=1.70158;var c3=c1+1;return 1+c3*Math.pow(t-1,3)+c1*Math.pow(t-1,2);};var lerp=function(a,b,t){return a+(b-a)*t;};\n  var f=props.frame||0;\n  var outP=easeIn(cl((f-280)/20));\n  var opacity=1-outP;\n  function boxProg(delay){\n    var p=ease(cl((f-delay)/40));\n    return {opacity:p,transform:'scale('+(0.9+0.1*p)+')'};\n  }\n  function labelProg(delay){return cl((f-delay)/10);}\n  function arrowProg(delay){return ease(cl((f-delay)/30));}\n  var box1=boxProg(0), box2=boxProg(30), box3=boxProg(60);\n  var arrowA=arrowProg(110), arrowB=arrowProg(140);\n  var arrowC=arrowProg(180), arrowD=arrowProg(210);\n  var labelA=labelProg(130), labelB=labelProg(160), labelC=labelProg(200), labelD=labelProg(230);\n  function Box(props){\n    var s=props.style||{};\n    return R('div',{style:Object.assign({width:'360px',height:'260px',background:'#F9FAFB',border:'2px solid #D1D5DB',borderRadius:'16px',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',padding:'20px',boxSizing:'border-box'},s)},props.children);\n  }\n  function ArrowRight(p,color,labelOp,labelText){\n    return R('div',{style:{position:'relative',flex:1,display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center'}},\n      R('div',{style:{position:'absolute',top:'-28px',fontSize:'18px',fontWeight:600,color:color,opacity:labelOp}},labelText),\n      R('div',{style:{position:'relative',width:'100%',height:'3px'}},\n        R('div',{style:{position:'absolute',left:0,top:0,height:'3px',width:(100*p)+'%',background:color,transformOrigin:'left center'}}),\n        R('div',{style:{position:'absolute',left:'calc('+(100*p)+'% - 1px)',top:'-7px',width:0,height:0,borderTop:'8px solid transparent',borderBottom:'8px solid transparent',borderLeft:'14px solid '+color,opacity:p>0.9?1:0}})\n      )\n    );\n  }\n  function ArrowLeft(p,color,labelOp,labelText){\n    return R('div',{style:{position:'relative',flex:1,display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center'}},\n      R('div',{style:{position:'absolute',bottom:'-28px',fontSize:'18px',fontWeight:600,color:color,opacity:labelOp}},labelText),\n      R('div',{style:{position:'relative',width:'100%',height:'3px'}},\n        R('div',{style:{position:'absolute',right:0,top:0,height:'3px',width:(100*p)+'%',background:color}}),\n        R('div',{style:{position:'absolute',right:'calc('+(100*p)+'% - 1px)',top:'-7px',width:0,height:0,borderTop:'8px solid transparent',borderBottom:'8px solid transparent',borderRight:'14px solid '+color,opacity:p>0.9?1:0}})\n      )\n    );\n  }\n  return R('div',{style:{width:'100%',height:'100%',background:'#FFFFFF',display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'Inter,system-ui,sans-serif',opacity:opacity,padding:'0 80px',boxSizing:'border-box'}},\n    R('div',{style:{width:'100%',maxWidth:'1760px',display:'flex',flexDirection:'column',gap:'12px'}},\n      R('div',{style:{display:'flex',alignItems:'center',gap:'24px'}},\n        R('div',{style:box1},\n          R(Box,null,\n            R('div',{style:{width:'120px',height:'76px',border:'2px solid #374151',borderRadius:'8px',display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'JetBrains Mono,monospace',fontSize:'28px',fontWeight:700,color:'#111928'}},'>_'),\n            R('div',{style:{fontSize:'32px',fontWeight:600,color:'#111928',marginTop:'16px'}},'Claude Code'),\n            R('div',{style:{fontSize:'18px',color:'#6B7280',marginTop:'4px'}},'your terminal')\n          )\n        ),\n        R('div',{style:{flex:1,display:'flex',flexDirection:'column',gap:'32px'}},\n          ArrowRight(arrowA,'#0084FF',labelA,'tool calls'),\n          ArrowLeft(arrowC,'#475569',labelC,'accessibility snapshot')\n        ),\n        R('div',{style:box2},\n          R(Box,null,\n            R('div',{style:{display:'flex',flexDirection:'column',gap:'8px'}},\n              R('div',{style:{width:'120px',height:'22px',border:'1.5px solid #374151',borderRadius:'4px',display:'flex',alignItems:'center',paddingLeft:'8px'}},R('div',{style:{width:'8px',height:'8px',borderRadius:'50%',background:'#22C55E'}})),\n              R('div',{style:{width:'120px',height:'22px',border:'1.5px solid #374151',borderRadius:'4px',display:'flex',alignItems:'center',paddingLeft:'8px'}},R('div',{style:{width:'8px',height:'8px',borderRadius:'50%',background:'#22C55E'}}))\n            ),\n            R('div',{style:{fontSize:'32px',fontWeight:600,color:'#111928',marginTop:'16px'}},'Playwright MCP'),\n            R('div',{style:{fontSize:'16px',fontFamily:'JetBrains Mono,monospace',color:'#6B7280',marginTop:'4px'}},'npx @playwright/mcp')\n          )\n        ),\n        R('div',{style:{flex:1,display:'flex',flexDirection:'column',gap:'32px'}},\n          ArrowRight(arrowB,'#0084FF',labelB,'Playwright API'),\n          ArrowLeft(arrowD,'#475569',labelD,'page state')\n        ),\n        R('div',{style:box3},\n          R(Box,null,\n            R('div',{style:{width:'140px',height:'76px',border:'2px solid #374151',borderRadius:'8px',overflow:'hidden'}},\n              R('div',{style:{height:'14px',background:'#E5E7EB',borderBottom:'1px solid #374151',display:'flex',alignItems:'center',justifyContent:'flex-end',paddingRight:'6px',gap:'3px'}},\n                R('div',{style:{width:'3px',height:'3px',borderRadius:'50%',background:'#6B7280'}}),\n                R('div',{style:{width:'3px',height:'3px',borderRadius:'50%',background:'#6B7280'}}),\n                R('div',{style:{width:'3px',height:'3px',borderRadius:'50%',background:'#6B7280'}})\n              )\n            ),\n            R('div',{style:{fontSize:'32px',fontWeight:600,color:'#111928',marginTop:'16px'}},'Browser'),\n            R('div',{style:{fontSize:'18px',color:'#6B7280',marginTop:'4px'}},'Chromium · Firefox · WebKit')\n          )\n        )\n      )\n    )\n  );\n}"
+    },
+    "InstallScene": {
+      "type": "inline",
+      "code": "function InstallScene(props){var R=React.createElement;var cl=function(x){return Math.max(0,Math.min(1,x));};var ease=function(t){return 1-Math.pow(1-t,3);};var easeIn=function(t){return t*t*t;};var easeInOut=function(t){return t<0.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;};var easeBack=function(t){var c1=1.70158;var c3=c1+1;return 1+c3*Math.pow(t-1,3)+c1*Math.pow(t-1,2);};var lerp=function(a,b,t){return a+(b-a)*t;};\n  var f=props.frame||0;\n  var termP=ease(cl(f/20));\n  var scale=0.95+0.05*termP;\n  var cmd='claude mcp add playwright npx @playwright/mcp@latest';\n  var typeStart=22, typeDur=68;\n  var typedChars=Math.floor(cl((f-typeStart)/typeDur)*cmd.length);\n  var typedText=cmd.slice(0,typedChars);\n  var line2P=ease(cl((f-95)/15));\n  var line2Scale=0.5+0.5*line2P;\n  var line3P=ease(cl((f-110)/10));\n  var cursorOn=Math.floor(((f-120)/15))%2===0 && f>=120;\n  return R('div',{style:{width:'100%',height:'100%',background:'#FFFFFF',display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'Inter,system-ui,sans-serif'}},\n    R('div',{style:{width:'1400px',height:'400px',background:'#1F2937',borderRadius:'12px',opacity:termP,transform:'scale('+scale+')',boxShadow:'0 30px 80px rgba(0,0,0,0.25)',display:'flex',flexDirection:'column',overflow:'hidden'}},\n      R('div',{style:{height:'44px',borderBottom:'1px solid #374151',display:'flex',alignItems:'center',paddingLeft:'20px',gap:'10px',flexShrink:0}},\n        R('div',{style:{width:'14px',height:'14px',borderRadius:'50%',background:'#EF4444'}}),\n        R('div',{style:{width:'14px',height:'14px',borderRadius:'50%',background:'#F59E0B'}}),\n        R('div',{style:{width:'14px',height:'14px',borderRadius:'50%',background:'#22C55E'}})\n      ),\n      R('div',{style:{padding:'36px 40px',fontFamily:'JetBrains Mono,monospace',fontSize:'22px',lineHeight:1.6,flex:1,display:'flex',flexDirection:'column',gap:'14px'}},\n        R('div',null,\n          R('span',{style:{color:'#6B7280'}},'$ '),\n          R('span',{style:{color:'#E5E7EB'}},typedText),\n          typedChars<cmd.length && (Math.floor(f/4)%2===0) ? R('span',{style:{color:'#E5E7EB'}},'▋') : null\n        ),\n        R('div',{style:{color:'#22C55E',opacity:line2P}},\n          R('span',{style:{display:'inline-block',transform:'scale('+line2Scale+')',transformOrigin:'left center'}},'✓ Connected: playwright')\n        ),\n        R('div',{style:{color:'#9CA3AF',fontSize:'18px',opacity:line3P}},'Tools available: navigate, click, type, screenshot, +17 more'),\n        R('div',{style:{color:'#E5E7EB',opacity:cursorOn?1:0}},'▋')\n      )\n    )\n  );\n}"
+    },
+    "SnapshotScene": {
+      "type": "inline",
+      "code": "function SnapshotScene(props){var R=React.createElement;var cl=function(x){return Math.max(0,Math.min(1,x));};var ease=function(t){return 1-Math.pow(1-t,3);};var easeIn=function(t){return t*t*t;};var easeInOut=function(t){return t<0.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;};var easeBack=function(t){var c1=1.70158;var c3=c1+1;return 1+c3*Math.pow(t-1,3)+c1*Math.pow(t-1,2);};var lerp=function(a,b,t){return a+(b-a)*t;};\n  var f=props.frame||0;\n  var labelsP=ease(cl(f/20));\n  var panesP=ease(cl(f/20));\n  var rightHeaderP=ease(cl((f-20)/20));\n  var outP=easeIn(cl((f-260)/40));\n  var op=1-outP;\n  var todosPulse=1;\n  if(f>=40 && f<=70){ var pp=(f-40)/30; todosPulse=1+0.03*Math.sin(pp*Math.PI); }\n  function lineProg(delay){return ease(cl((f-delay)/30));}\n  var l1=lineProg(40), l2=lineProg(80), l3=lineProg(120), l4=lineProg(120), l5=lineProg(140);\n  function refGlow(delay){\n    var t=cl((f-delay)/10);\n    return t<1 ? Math.sin(t*Math.PI)*0.6 : 0;\n  }\n  var e5Glow=refGlow(100), e10Glow=refGlow(140);\n  var focusP=cl((f-100)/15);\n  var focusHoldEnd=cl((f-115)/15);\n  var focusFadeOut=cl((f-130)/15);\n  var focusOp=focusP-focusFadeOut;\n  function rowP(delay){\n    var p=ease(cl((f-delay)/15));\n    return {opacity:p,transform:'translateY('+(8*(1-p))+'px)'};\n  }\n  var row1=rowP(140), row2=rowP(153), row3=rowP(166);\n  function typedText(text,start,dur){\n    var n=Math.floor(cl((f-start)/dur)*text.length);\n    return text.slice(0,n);\n  }\n  return R('div',{style:{width:'100%',height:'100%',background:'#FFFFFF',display:'flex',fontFamily:'Inter,system-ui,sans-serif',padding:'180px 60px 60px',boxSizing:'border-box',position:'relative',opacity:op}},\n    R('div',{style:{position:'absolute',top:'120px',left:'120px',width:'720px',textAlign:'center',fontSize:'14px',fontWeight:700,color:'#6B7280',letterSpacing:'1.5px',opacity:labelsP}},'WHAT CLAUDE READS'),\n    R('div',{style:{position:'absolute',top:'120px',right:'120px',width:'720px',textAlign:'center',fontSize:'14px',fontWeight:700,color:'#6B7280',letterSpacing:'1.5px',opacity:labelsP}},'WHAT YOU SEE'),\n    R('div',{style:{width:'720px',height:'520px',background:'#1F2937',borderRadius:'12px',opacity:panesP,padding:'40px 44px',boxSizing:'border-box',fontFamily:'JetBrains Mono,monospace',fontSize:'18px',lineHeight:1.7,color:'#E5E7EB',marginRight:'60px'}},\n      R('div',{style:{opacity:l1}},'- heading \"todos\" [level=1]'),\n      R('div',{style:{marginTop:'6px',opacity:l2}},'- textbox \"What needs to be done?\" ',\n        R('span',{style:{color:'#FBBF24',fontWeight:600,textShadow:e5Glow>0?'0 0 '+(16*e5Glow)+'px rgba(251,191,36,'+e5Glow+')':'none'}},'[ref=e5]')\n      ),\n      R('div',{style:{marginTop:'6px',opacity:l3}},'- listitem:'),\n      R('div',{style:{marginLeft:'28px',marginTop:'6px',opacity:l4}},'- checkbox \"Toggle Todo\" ',\n        R('span',{style:{color:'#FBBF24',fontWeight:600,textShadow:e10Glow>0?'0 0 '+(16*e10Glow)+'px rgba(251,191,36,'+e10Glow+')':'none'}},'[ref=e10]')\n      ),\n      R('div',{style:{marginLeft:'28px',marginTop:'6px',opacity:l5}},'- text: \"Buy groceries\"')\n    ),\n    R('div',{style:{width:'720px',height:'520px',background:'#FFFFFF',border:'1.5px solid #E5E7EB',borderRadius:'12px',opacity:panesP,padding:'40px',boxSizing:'border-box',display:'flex',flexDirection:'column',alignItems:'center'}},\n      R('div',{style:{fontSize:'72px',fontWeight:200,color:'#FDE2E2',lineHeight:1,opacity:rightHeaderP,transform:'scale('+todosPulse+')'}},'todos'),\n      R('div',{style:{position:'relative',width:'600px',marginTop:'36px',opacity:rightHeaderP}},\n        R('div',{style:{width:'600px',height:'44px',border:'1px solid #EDEDED',background:'#FFFFFF',display:'flex',alignItems:'center',padding:'0 18px',fontStyle:'italic',fontSize:'18px',color:'#BFBFBF'}},'What needs to be done?'),\n        focusOp>0.001 ? R('div',{style:{position:'absolute',top:'-4px',left:'-4px',right:'-4px',bottom:'-4px',border:'2px solid #0084FF',borderRadius:'6px',opacity:focusOp}}) : null\n      ),\n      R('div',{style:{width:'600px',marginTop:'20px',display:'flex',flexDirection:'column'}},\n        R('div',{style:Object.assign({},row1,{borderTop:'1px solid #EDEDED',padding:'18px 16px',display:'flex',alignItems:'center',gap:'14px'})},\n          R('div',{style:{width:'22px',height:'22px',border:'1.5px solid #CCCCCC',borderRadius:'50%'}}),\n          R('span',{style:{fontSize:'18px',color:'#4D4D4D'}},typedText('Buy groceries',140,15))\n        ),\n        R('div',{style:Object.assign({},row2,{borderTop:'1px solid #EDEDED',padding:'18px 16px',display:'flex',alignItems:'center',gap:'14px'})},\n          R('div',{style:{width:'22px',height:'22px',border:'1.5px solid #CCCCCC',borderRadius:'50%'}}),\n          R('span',{style:{fontSize:'18px',color:'#4D4D4D'}},typedText('Walk the dog',153,15))\n        ),\n        R('div',{style:Object.assign({},row3,{borderTop:'1px solid #EDEDED',padding:'18px 16px',display:'flex',alignItems:'center',gap:'14px'})},\n          R('div',{style:{width:'22px',height:'22px',border:'1.5px solid #CCCCCC',borderRadius:'50%'}}),\n          R('span',{style:{fontSize:'18px',color:'#4D4D4D'}},typedText('Ship the blog',166,15))\n        )\n      )\n    )\n  );\n}"
+    },
+    "CTAScene": {
+      "type": "inline",
+      "code": "function CTAScene(props){var R=React.createElement;var cl=function(x){return Math.max(0,Math.min(1,x));};var ease=function(t){return 1-Math.pow(1-t,3);};var easeIn=function(t){return t*t*t;};var easeInOut=function(t){return t<0.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;};var easeBack=function(t){var c1=1.70158;var c3=c1+1;return 1+c3*Math.pow(t-1,3)+c1*Math.pow(t-1,2);};var lerp=function(a,b,t){return a+(b-a)*t;};\n  var f=props.frame||0;\n  var logoP=ease(cl(f/20));\n  var divP=ease(cl((f-20)/15));\n  var titleP=ease(cl((f-35)/20));\n  var btnP=ease(cl((f-60)/20));\n  var urlP=ease(cl((f-120)/30));\n  var arrowNudge=Math.sin(cl((f-80)/40)*Math.PI*2)*2;\n  return R('div',{style:{width:'100%',height:'100%',background:'#FFFFFF',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',fontFamily:'Inter,system-ui,sans-serif'}},\n    R('div',{style:{opacity:logoP,transform:'translateY('+(12*(1-logoP))+'px)',fontSize:'56px',fontWeight:700,letterSpacing:'-1px'}},\n      R('span',{style:{color:'#111928'}},'Flow'),\n      R('span',{style:{background:'linear-gradient(90deg,#0084FF,#1A56DB)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text'}},'Hunt')\n    ),\n    R('div',{style:{width:'200px',height:'1px',background:'#E5E7EB',marginTop:'28px',transform:'scaleX('+divP+')',transformOrigin:'center'}}),\n    R('div',{style:{marginTop:'48px',textAlign:'center',opacity:titleP,transform:'translateY('+(12*(1-titleP))+'px)',maxWidth:'1400px'}},\n      R('div',{style:{fontSize:'44px',fontWeight:700,color:'#111928',lineHeight:1.2,letterSpacing:'-0.5px'}},'How to Use Claude Code with Playwright MCP'),\n      R('div',{style:{marginTop:'18px',fontSize:'24px',color:'#6B7280'}},'A complete setup guide')\n    ),\n    R('div',{style:{marginTop:'56px',width:'320px',height:'64px',borderRadius:'32px',background:'linear-gradient(90deg,#0084FF,#1A56DB)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'22px',fontWeight:600,color:'#FFFFFF',opacity:btnP,transform:'scale('+(0.9+0.1*btnP)+')',boxShadow:'0 12px 28px rgba(0,132,255,0.35)'}},\n      R('span',null,'Read the guide '),\n      R('span',{style:{display:'inline-block',marginLeft:'8px',transform:'translateX('+arrowNudge+'px)'}},'→')\n    ),\n    R('div',{style:{marginTop:'52px',fontSize:'20px',fontWeight:500,color:'#6B7280',opacity:urlP}},'flowhunt.io/blog')\n  );\n}"
+    }
+  },
+  "inputs": [],
+  "composition": {
+    "scenes": [
+      {
+        "id": "s1-hook",
+        "startFrame": 0,
+        "endFrame": 90,
+        "backgroundColor": "#FFFFFF",
+        "transition": {
+          "type": "fade",
+          "duration": 18
+        },
+        "layers": [
+          {
+            "id": "s1-hook-layer",
+            "type": "custom",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "size": {
+              "width": 1920,
+              "height": 1080
+            },
+            "customComponent": {
+              "name": "HookScene",
+              "props": {}
+            }
+          }
+        ]
+      },
+      {
+        "id": "s2-problem",
+        "startFrame": 90,
+        "endFrame": 270,
+        "backgroundColor": "#FFFFFF",
+        "transition": {
+          "type": "fade",
+          "duration": 18
+        },
+        "layers": [
+          {
+            "id": "s2-problem-layer",
+            "type": "custom",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "size": {
+              "width": 1920,
+              "height": 1080
+            },
+            "customComponent": {
+              "name": "ProblemScene",
+              "props": {}
+            }
+          }
+        ]
+      },
+      {
+        "id": "s3-pivot",
+        "startFrame": 270,
+        "endFrame": 420,
+        "backgroundColor": "#FFFFFF",
+        "transition": {
+          "type": "fade",
+          "duration": 18
+        },
+        "layers": [
+          {
+            "id": "s3-pivot-layer",
+            "type": "custom",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "size": {
+              "width": 1920,
+              "height": 1080
+            },
+            "customComponent": {
+              "name": "PivotScene",
+              "props": {}
+            }
+          }
+        ]
+      },
+      {
+        "id": "s4-architecture",
+        "startFrame": 420,
+        "endFrame": 720,
+        "backgroundColor": "#FFFFFF",
+        "transition": {
+          "type": "fade",
+          "duration": 18
+        },
+        "layers": [
+          {
+            "id": "s4-architecture-layer",
+            "type": "custom",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "size": {
+              "width": 1920,
+              "height": 1080
+            },
+            "customComponent": {
+              "name": "ArchitectureScene",
+              "props": {}
+            }
+          }
+        ]
+      },
+      {
+        "id": "s5-install",
+        "startFrame": 720,
+        "endFrame": 900,
+        "backgroundColor": "#FFFFFF",
+        "transition": {
+          "type": "fade",
+          "duration": 18
+        },
+        "layers": [
+          {
+            "id": "s5-install-layer",
+            "type": "custom",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "size": {
+              "width": 1920,
+              "height": 1080
+            },
+            "customComponent": {
+              "name": "InstallScene",
+              "props": {}
+            }
+          }
+        ]
+      },
+      {
+        "id": "s6-snapshot",
+        "startFrame": 900,
+        "endFrame": 1200,
+        "backgroundColor": "#FFFFFF",
+        "transition": {
+          "type": "fade",
+          "duration": 18
+        },
+        "layers": [
+          {
+            "id": "s6-snapshot-layer",
+            "type": "custom",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "size": {
+              "width": 1920,
+              "height": 1080
+            },
+            "customComponent": {
+              "name": "SnapshotScene",
+              "props": {}
+            }
+          }
+        ]
+      },
+      {
+        "id": "s7-cta",
+        "startFrame": 1200,
+        "endFrame": 1350,
+        "backgroundColor": "#FFFFFF",
+        "transition": {
+          "type": "fade",
+          "duration": 18
+        },
+        "layers": [
+          {
+            "id": "s7-cta-layer",
+            "type": "custom",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "size": {
+              "width": 1920,
+              "height": 1080
+            },
+            "customComponent": {
+              "name": "CTAScene",
+              "props": {}
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
